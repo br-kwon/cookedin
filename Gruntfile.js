@@ -125,6 +125,6 @@ module.exports = function(grunt) {
     'upload'
   ]);
   
-  grunt.registerTask('default', []);
+  grunt.registerTask('default', ['jshint']);
 
 };
