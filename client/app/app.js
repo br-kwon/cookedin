@@ -1,6 +1,7 @@
 angular.module('cookedin', [
   'cookedin.services',
   'cookedin.auth',
+  'cookedin.listing',
   'ng-route'
 ])
 
@@ -13,5 +14,9 @@ angular.module('cookedin', [
     .when('/signup', {
       templateUrl: 'auth/createAccount.html',
       controller: 'AuthController'
+    })
+    .when('/listing', {
+      templateUrl: 'listing/listing.html',
+      controller: 'ListingController'
     });
 });

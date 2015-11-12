@@ -1,6 +1,8 @@
 <div>
   <form>
-    <input class='login_username'>
-    <input class='login_password'>
+    <input type='text' class='createAccount_username' ng-model='user.username'>
+    <input type='password' class='createAccount_password' ng-model='user.password'>
   </form>
+  <div class='createAccountResponse'></div>
+  <a href='#/signup'>Already have an account? <strong>SIGNIN</strong>...</a>
 </div>
