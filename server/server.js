@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 
 var app = express();
 
-mongoose.connect('mongodb://<br-kwon>:<bk125678>@ds053164.mongolab.com:53164/heroku_5mjzm2rh');
+mongoose.connect('mongodb://br-kwon:bk125678@ds053164.mongolab.com:53164/heroku_5mjzm2rh');
 
 require('./config/middleware.js')(app, express);
 
