@@ -1,7 +1,7 @@
-var app = require('express');
+var express = require('express');
 var mongoose = require('mongoose');
 
-app = express();
+var app = express();
 
 mongoose.connect('mongodb://localhost/cookedin');
 
