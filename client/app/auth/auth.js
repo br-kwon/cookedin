@@ -1,15 +1,15 @@
-angular.module('shortly.auth', [])
+angular.module('cookedin.auth', [])
 
-.controller('AuthController', function($scope, $window, $location, Auth) {) {
-  $scope.user {};
+.controller('AuthController', function($scope, $window, $location, Auth) {
+  $scope.user = {};
 
   $scope.signin = function() {
     Auth.signin($scope.user)
     .then(function(token) {
       $window.localStorage.setItem('com.cookedin', token);
-      $location.path('/links');
+      $location.path('/listing');
     })
-    .caatch(function(error) {
+    .catch(function(error) {
       console.error(error);
     });
   };
@@ -18,9 +18,9 @@ angular.module('shortly.auth', [])
     Auth.signup($scope.user)
     .then(function(token) {
       $window.localStorage.setItem('com.cookedin', token);
-      $location.path('/links');
+      $location.path('/listing');
     })
-    .catch(fuction(error) {
+    .catch(function(error) {
       console.error(error);
     });
   };

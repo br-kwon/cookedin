@@ -1,22 +1,26 @@
 angular.module('cookedin', [
   'cookedin.services',
-  'cookedin.auth',
   'cookedin.listing',
-  'ng-route'
+  'cookedin.auth',
+  'ngRoute'
 ])
 
-.config(function($routeProvider, $httpProvider) {
+.config(function ($routeProvider, $httpProvider) {
   $routeProvider
-    .when('/signin', {
-      templateUrl: 'auth/login.html',
-      controller: 'AuthController'
-    })
-    .when('/signup', {
-      templateUrl: 'auth/createAccount.html',
-      controller: 'AuthController'
-    })
-    .when('/listing', {
-      templateUrl: 'listing/listing.html',
-      controller: 'ListingController'
-    });
+  .when('/signin', {
+    templateUrl: 'app/auth/login.html',
+    controller: 'AuthController'
+  })
+  .when('/signup', {
+    templateUrl: 'app/auth/createAccount.html',
+    controller: 'AuthController'
+  })
+  .when('/listing', {
+    templateUrl: 'app/listing/listing.html',
+    controller: 'ListingController',
+    authenticate: true
+  })
+  .otherwise({
+    redirectTo: '/signin'
+  });
 });
