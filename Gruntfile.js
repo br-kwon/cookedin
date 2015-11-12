@@ -15,15 +15,15 @@ module.exports = function(grunt) {
     mochaTest: {
       test: {
         options: {
-          reporter: 'spec'
+          reporter: 'specs'
         },
-        src: ['spec/**/*.js']
+        src: ['specs/**/*.js']
       }
     },
 
     nodemon: {
       dev: {
-        script: 'server.js'
+        script: 'server/server.js'
       }
     },
 
@@ -32,7 +32,11 @@ module.exports = function(grunt) {
 
     jshint: {
       files: [
-        '*.js', 'client/**/*.js', 'server/**/*.js'
+        './*.js',
+        'Gruntfile.js',
+        'client/**/*.js', 
+        'server/**/*.js',
+        'specs/**/*.js'
       ],
       options: {
         force: 'true',
@@ -45,7 +49,6 @@ module.exports = function(grunt) {
     },
 
     cssmin: {
-        // Add filespec list here
     },
 
     watch: {
@@ -103,19 +106,25 @@ module.exports = function(grunt) {
   ]);
 
   grunt.registerTask('build', [
+    'concat',
+    'uglify',
+    'cssmin'
   ]);
 
   grunt.registerTask('upload', function(n) {
     if(grunt.option('prod')) {
-      // add your production server task here
+      grunt.task.run([ 'shell:prodServer' ]);
     } else {
       grunt.task.run([ 'server-dev' ]);
-    }
+    }    
   });
 
   grunt.registerTask('deploy', [
-      // add your production server task here
+    'test',
+    'build',
+    'upload'
   ]);
-
+  
+  grunt.registerTask('default', []);
 
 };
