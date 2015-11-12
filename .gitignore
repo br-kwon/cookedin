@@ -2,4 +2,6 @@ bower_components
 node_modules
 public/dist
 client/lib
+data
+
 
