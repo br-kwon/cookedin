@@ -1,6 +1,9 @@
 <div>
+  <div>CREATE ACCOUNT PAGE</div>
   <form>
-    <input class='login_username'>
-    <input class='login_password'>
+    <input type='text' class='login_username' ng-model='user.username'>
+    <input type='password' class='login_password' ng-model='user.password'>
   </form>
+  <div class='loginResponse'></div>
+  <a href='#/signup'>Don't have an account? <strong>SIGNUP</strong>...</a>
 </div>
