@@ -1,7 +1,7 @@
 {
   "name": "cookedin",
   "version": "0.0.1",
-  "authors": [J Campelino, B Kwon, H Lee, S Skiba],
+  "authors": ["J Campecino", "B Kwon", "H Lee", "S Skiba"],
   "license": "MIT",
   "ignore": [
     "**/.*",
