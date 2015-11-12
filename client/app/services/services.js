@@ -1,6 +1,6 @@
 angular.module('cookedin.services', [])
 
-factory('Auth', function($http, $location, $window) {
+.factory('Auth', function($http, $location, $window) {
   var signin = function(user) {
     return $http({
       method: 'POST',
@@ -40,3 +40,36 @@ factory('Auth', function($http, $location, $window) {
     signout: signout
   };
 })
+.factory('Listing', function() {
+  var getListings = function() {
+    return $http({
+      method: 'GET',
+      url: 'api/listings'
+    })
+    .then(function(res) {
+      return res.data;
+    });
+  };
+
+  var addListing = function(listing) {
+    return $http({
+      method: 'POST',
+      url: 'api/listings',
+      data: listing
+    });
+  };
+
+  return {
+    getListings: getListings,
+    addListing: addListing
+  };
+});
+
+
+
+
+
+
+
+
+
